@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IETE HIT SF</title>
+
+    <link rel="stylesheet" href="./public/css/landing.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <header>
+            <div class="logo__container">
+                <a href="">
+                    <img src="./public/svg/logo.svg" alt="logo" />
+                    <span> IETE HIT SF </span>
+                </a>
+            </div>
+
+            <nav>
+                <ul>
+                    <li> <a href=""> Home </a> </li>
+                    <li> <a href=""> About </a> </li>
+                    <li> <a href=""> Blog </a> </li>
+                    <li> <a href=""> Contact </a> </li>
+                </ul>
+                <img src="./public/svg/nav.svg" alt="" class="nav-svg" />
+            </nav>
+        </header>
+
+        <div class="container">
+            <div class="main">
+                <div class="robo">
+                    <img src="./public/svg/circle.svg" alt="circle1" class="circle1">
+                    <img src="./public/svg/robot.svg" alt="robo" class="robot">
+                    <img src="./public/svg/circle.svg" alt="circle2" class="circle2">
+                    <img src="./public/svg/circle.svg" alt="circle3" class="circle3">
+                    <div class="signInOrUp">
+                        <p class="title"> IETE HIT SF </p>
+                        <img src="./public/svg/arrow2.svg" alt="arrowForm" class="arrowForm" />
+                        <p class="registration__form"> REGISTRATION FORM </p>
+                    </div>
+                </div>
+                <div class="content">
+                    <img src="./public/svg/arrow1.svg" alt=">>>" class="arrow1" />
+                    <p class="title"> IETE HIT SF </p>
+                    <p class="brief"> Welcome to our site! Stay ahead of the curve with the updates and insights of
+                        cutting-edge technology . Join us on our journey to explore the future of technology and be a
+                        part of “IETE HIT SF Family” </p>
+                    <img src="./public/svg/arrow2.svg" alt="arrow2" class="arrow2" />
+                    <button onclick="explore()"> Explore Us </button>
+                </div>
+                <img src="./public/svg/circle.svg" alt="|||>>>|||" class="circle4" />
+
+
+
+
+                <!-- ===================== code for registration/ login form ===================== -->
+                <div class="form-container" style="display: none;"> <!-- style="overflow: hidden;" -->
+                    <div class="swapper">
+                        <h3 class="verification" style="display: none;"> Check Your Email For Verification Mail <br />
+                            <button onclick="ResendCode()"> Resend Code </button>
+                        </h3>
+                        <div class="register__message">
+                            <h3> NEW HERE ? </h3>
+                            <p> Sign up and discover great amount of new opportunities! </p>
+                            <button class="signUp" onclick="signUpRouter('')"> Sign Up </button>
+                        </div>
+                        <button class="verifyEmail" onclick="ResendCode()" style="display: none;"> Verify Email
+                        </button>
+                        <div class="login__message">
+                            <p class="registrationError" style="color: orangered;"></p>
+                            <!-- <p class="registrationError"> Password must contain one uppercase, lowercase and symbols ('$' or '@')</p> -->
+                            <h3> ALREADY A MEMBER ? </h3>
+                            <p> Login up and track your growth! </p>
+                            <button class="signIn" onclick="signInRouter()"> Sign In </button>
+                        </div>
+                    </div>
+                    <div class="login">
+                        <h3> WELCOME BACK </h3>
+                        <p class="loginError"></p>
+                        <form onsubmit="loginUser(event)">
+                            <div class="input__fields email">
+                                <label for="email"> EMAIL </label> <br />
+                                <input type="email" id="email" required />
+                            </div>
+                            <div class="input__fields password">
+                                <label for="password"> PASSWORD </label> <br />
+                                <input type="password" id="password" required />
+                            </div>
+                            <input type="submit" value="LOG IN >>>>">
+                        </form>
+
+                        <div class="ResendCode" style="display: none;">
+                            <form onsubmit="redirectToLogin(event)">
+                                <div class="input__fields email">
+                                    <label for="email"> ENTER EMAIL </label> <br />
+                                    <input type="email" id="email" required />
+                                </div>
+                                <button> Get Code </button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="registration">
+                        <h3> JOIN US </h3>
+                        <form onsubmit="registerUser(event)">
+                            <div class="first__view">
+                                <div class="input__fields name">
+                                    <label for="name"> Name </label> <br />
+                                    <input type="text" name="name" id="name" />
+                                </div>
+                                <div class="input__fields email">
+                                    <label for="email"> EMAIL </label> <br />
+                                    <input type="email" name="email" id="email" />
+                                </div>
+                                <div class="input__fields password">
+                                    <label for="password"> PASSWORD </label> <br />
+                                    <input type="password" name="password" id="password" />
+                                </div>
+                                <div class="input__fields password">
+                                    <label for="password"> CONFIRM PASSWORD </label> <br />
+                                    <input type="password" name="cnfpwd" id="cnfpwd" />
+                                </div>
+                                <a class="next__view" onclick="goToSecondView()"> Next >>> </a>
+                            </div>
+                            <div class="second__view" style="display: none;">
+                                <div class="input__fields college">
+                                    <label for="college"> COLLEGE </label> <br />
+                                    <input type="text" name="college" id="college" />
+                                </div>
+                                <div class="input__fields department">
+                                    <label for="email"> DEPARTMENT </label> <br />
+                                    <select id="department" name="department"
+                                        onmousedown="if(this.options.length>3){this.size=3;}" onchange='this.size=0;'
+                                        onblur="this.size=0;">
+                                        <option> ECE </option>
+                                        <option> CSE </option>
+                                        <option> CSE-AIML </option>
+                                        <option> CSE-CS </option>
+                                        <option> CSE-DS </option>
+                                        <option> IT </option>
+                                        <option> EE </option>
+                                        <option> EIE </option>
+                                        <option> CIVIL </option>
+                                        <option> MECHANICAL </option>
+                                    </select>
+                                </div>
+                                <div class="input__fields number">
+                                    <label for="number"> CONTACT NUMBER </label> <br />
+                                    <input type="number" name="contact" id="contact" />
+                                </div>
+                                <a class="prev__view" onclick="goToFirstView()"> &#x3c;&#x3c;&#x3c; BACK </a><br />
+                                <button> REGISTER </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <img src="./public/svg/sideone.svg" alt="design" class="sideone1" />
+            <img src="./public/svg/sideone.svg" alt="design" class="sideone2" />
+        </div>
+    </div>
+
+    <script>
+        let main = document.querySelector(".main");
+        // let robo = document.querySelector(".main .robo");
+        let robot = document.querySelector(".main .robo .robot");
+        let circle1 = document.querySelector(".main .robo .circle1");
+        let circle2 = document.querySelector(".main .robo .circle2");
+        let content = document.querySelector(".main .content");
+        // let title = document.querySelector(".main .content .title");
+        let arrow2 = document.querySelector(".main .content .arrow2");
+        let button = document.querySelector(".main .content button");
+        let swiperShow = document.querySelector(".main-container .swiper");
+        let formContainer = document.querySelector(".form-container");
+        function explore() {
+            main.style.height = '100%';
+            let signInOrUp = document.querySelector(".container .main .robo .signInOrUp");
+            signInOrUp.style.display = "block";
+            if (screen.width > 1150) {
+                robot.style.transform = 'scale(0.7) translate(-400px, -90px)';
+                circle1.style.transform = 'scale(0.7) translate(-15px, -100px)';
+                // robot.style.transform = 'scale(0.7) translate(-485px, -90px)';
+                // circle1.style.transform = 'scale(0.7) translate(-100px, -100px)';
+                main.style.width = '95%';
+                main.classList.add("mainRegistrationChange");
+            }
+            else if (screen.width <= 1150 && screen.width > 950) {
+                robot.style.transform = 'scale(0.7) translate(-350px, -90px)';
+                circle1.style.transform = 'scale(0.7) translate(-15px, -100px)';
+                // robot.style.transform = 'scale(0.7) translate(-400px, -90px)';
+                // circle1.style.transform = 'scale(0.7) translate(-100px, -100px)';
+                // formContainer.style.transform = "scaleX(1.02)";
+                signInOrUp.style.left = "25%";
+                signInOrUp.style.transform = "translateX(-25%)";
+                main.style.width = '97.5%';
+                main.classList.add("mainRegistrationChange");
+            } else {
+                robot.style.transform = 'scale(0.65) translate(-440px, -100px)';
+                circle1.style.transform = 'scale(0.7) translate(-100px, -100px)';
+                main.style.width = '98.5%';
+                main.classList.add("mainRegistrationChange");
+            }
+            formContainer.style.display = "flex";
+            content.style.display = "none";
+            swiperShow.style.display = "none";
+        }
+    </script>
+</body>
+
+</html>

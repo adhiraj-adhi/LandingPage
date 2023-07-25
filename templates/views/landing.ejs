@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IETE HIT SF</title>
+
+    <!-- CDN For Swiper.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <!-- end of CDN For Swiper.js -->
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/public.js" defer></script>
+</head>
+
+<body>
+    <div class="main-container">
+        <header>
+            <div class="logo__container">
+                <a href="">
+                    <img src="/svg/logo.svg" alt="logo" />
+                    <span> IETE HIT SF </span>
+                </a>
+            </div>
+
+            <nav>
+                <ul>
+                    <li> <a href=""> Home </a> </li>
+                    <li> <a href=""> About </a> </li>
+                    <li> <a href=""> Blog </a> </li>
+                    <li> <a href=""> Contact </a> </li>
+                </ul>
+                <img src="/svg/nav.svg" alt="" class="nav-svg" />
+            </nav>
+        </header>
+
+        <div class="container">
+            <div class="main">
+                <div class="robo">
+                    <img src="/svg/circle.svg" alt="circle1" class="circle1">
+                    <img src="/svg/robot.svg" alt="robo" class="robot">
+                    <img src="/svg/circle.svg" alt="circle2" class="circle2">
+                    <img src="/svg/circle.svg" alt="circle3" class="circle3">
+                    <div class="signInOrUp">
+                        <p class="title"> IETE HIT SF </p>
+                        <img src="/svg/arrow2.svg" alt="arrowForm" class="arrowForm" />
+                        <p class="registration__form"> REGISTRATION FORM </p>
+                    </div>
+                </div>
+                <div class="content">
+                    <img src="/svg/arrow1.svg" alt=">>>" class="arrow1" />
+                    <p class="title"> IETE HIT SF </p>
+                    <p class="brief"> Welcome to our site! Stay ahead of the curve with the updates and insights of
+                        cutting-edge technology . Join us on our journey to explore the future of technology and be a
+                        part of “IETE HIT SF Family” </p>
+                    <img src="/svg/arrow2.svg" alt="arrow2" class="arrow2" />
+                    <button onclick="explore()"> Explore Us </button>
+                </div>
+                <img src="/svg/circle.svg" alt="|||>>>|||" class="circle4" />
+
+
+
+
+                <!-- ===================== code for registration/ login form ===================== -->
+                <div class="form-container" style="display: none;"> <!-- style="overflow: hidden;" -->
+                    <div class="swapper">
+                        <h3 class="verification" style="display: none;"> Check Your Email For Verification Mail <br/> <button onclick="ResendCode()"> Resend Code </button></h3>
+                        <div class="register__message">
+                            <h3> NEW HERE ? </h3>
+                            <p> Sign up and discover great amount of new opportunities! </p>
+                            <button class="signUp" onclick="signUpRouter('')"> Sign Up </button>
+                        </div>
+                        <button class="verifyEmail" onclick="ResendCode()" style="display: none;"> Verify Email </button>
+                        <div class="login__message">
+                            <p class="registrationError" style="color: orangered;"></p>
+                            <!-- <p class="registrationError"> Password must contain one uppercase, lowercase and symbols ('$' or '@')</p> -->
+                            <h3> ALREADY A MEMBER ? </h3>
+                            <p> Login up and track your growth! </p>
+                            <button class="signIn" onclick="signInRouter()"> Sign In </button>
+                        </div>
+                    </div>
+                    <div class="login">
+                        <h3> WELCOME BACK </h3>
+                        <p class="loginError"></p>
+                        <form onsubmit="loginUser(event)">
+                            <div class="input__fields email">
+                                <label for="email"> EMAIL </label> <br />
+                                <input type="email" id="email" required/>
+                            </div>
+                            <div class="input__fields password">
+                                <label for="password"> PASSWORD </label> <br />
+                                <input type="password" id="password" required/>
+                            </div>
+                            <input type="submit" value="LOG IN >>>>">
+                        </form>
+
+                        <div class="ResendCode" style="display: none;">
+                            <form onsubmit="redirectToLogin(event)">
+                                <div class="input__fields email">
+                                    <label for="email"> ENTER EMAIL </label> <br />
+                                    <input type="email" id="email" required/>
+                                </div>
+                                <button> Get Code </button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="registration">
+                        <h3> JOIN US </h3>
+                        <form onsubmit="registerUser(event)">
+                            <div class="first__view">
+                                <div class="input__fields name">
+                                    <label for="name"> Name </label> <br />
+                                    <input type="text" name="name" id="name" />
+                                </div>
+                                <div class="input__fields email">
+                                    <label for="email"> EMAIL </label> <br />
+                                    <input type="email" name="email" id="email" />
+                                </div>
+                                <div class="input__fields password">
+                                    <label for="password"> PASSWORD </label> <br />
+                                    <input type="password" name="password" id="password" />
+                                </div>
+                                <div class="input__fields password">
+                                    <label for="password"> CONFIRM PASSWORD </label> <br />
+                                    <input type="password" name="cnfpwd" id="cnfpwd" />
+                                </div>
+                                <a class="next__view" onclick="goToSecondView()"> Next >>> </a>
+                            </div>
+                            <div class="second__view" style="display: none;">
+                                <div class="input__fields college">
+                                    <label for="college"> COLLEGE </label> <br />
+                                    <input type="text" name="college" id="college" />
+                                </div>
+                                <div class="input__fields department">
+                                    <label for="email"> DEPARTMENT </label> <br />
+                                    <select id="department" name="department" onmousedown="if(this.options.length>3){this.size=3;}"
+                                        onchange='this.size=0;' onblur="this.size=0;">
+                                        <option> ECE </option>
+                                        <option> CSE </option>
+                                        <option> CSE-AIML </option>
+                                        <option> CSE-CS </option>
+                                        <option> CSE-DS </option>
+                                        <option> IT </option>
+                                        <option> EE </option>
+                                        <option> EIE </option>
+                                        <option> CIVIL </option>
+                                        <option> MECHANICAL </option>
+                                    </select>
+                                </div>
+                                <div class="input__fields number">
+                                    <label for="number"> CONTACT NUMBER </label> <br />
+                                    <input type="number" name="contact" id="contact" />
+                                </div>
+                                <a class="prev__view" onclick="goToFirstView()"> &#x3c;&#x3c;&#x3c; BACK </a><br />
+                                <button> REGISTER </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <img src="/svg/sideone.svg" alt="design" class="sideone1" />
+            <img src="/svg/sideone.svg" alt="design" class="sideone2" />
+        </div>
+
+
+
+
+        <!-- =================  code for image swiper  ============================= -->
+
+        <div class="swiper mySwiper" id="unhide">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img
+                        src="https://www.zdnet.com/a/img/resize/67f3ed8ab4a45e3c0a72815bfb447b5326882e2b/2023/01/10/fe6fc344-ba1c-4205-9aa5-f6e7dea901ee/gettyimages-1397487342.jpg?auto=webp&precrop=6240,3504,x0,y530&width=1280" />
+                    <button onclick="signInOrUp()"> Register </button>
+                </div>
+                <div class="swiper-slide">
+                    <img
+                        src="https://www.zdnet.com/a/img/resize/67f3ed8ab4a45e3c0a72815bfb447b5326882e2b/2023/01/10/fe6fc344-ba1c-4205-9aa5-f6e7dea901ee/gettyimages-1397487342.jpg?auto=webp&precrop=6240,3504,x0,y530&width=1280" />
+                    <button onclick="signInOrUp()"> Register </button>
+                </div>
+                <div class="swiper-slide">
+                    <img
+                        src="https://www.zdnet.com/a/img/resize/67f3ed8ab4a45e3c0a72815bfb447b5326882e2b/2023/01/10/fe6fc344-ba1c-4205-9aa5-f6e7dea901ee/gettyimages-1397487342.jpg?auto=webp&precrop=6240,3504,x0,y530&width=1280" />
+                    <button onclick="signInOrUp()"> Register </button>
+                </div>
+                <div class="swiper-slide">
+                    <img
+                        src="https://www.zdnet.com/a/img/resize/67f3ed8ab4a45e3c0a72815bfb447b5326882e2b/2023/01/10/fe6fc344-ba1c-4205-9aa5-f6e7dea901ee/gettyimages-1397487342.jpg?auto=webp&precrop=6240,3504,x0,y530&width=1280" />
+                    <button onclick="signInOrUp()"> Register </button>
+                </div>
+                <div class="swiper-slide">
+                    <img
+                        src="https://www.zdnet.com/a/img/resize/67f3ed8ab4a45e3c0a72815bfb447b5326882e2b/2023/01/10/fe6fc344-ba1c-4205-9aa5-f6e7dea901ee/gettyimages-1397487342.jpg?auto=webp&precrop=6240,3504,x0,y530&width=1280" />
+                    <button onclick="signInOrUp()"> Register </button>
+                </div>
+                <div class="swiper-slide">
+                    <img
+                        src="https://www.zdnet.com/a/img/resize/67f3ed8ab4a45e3c0a72815bfb447b5326882e2b/2023/01/10/fe6fc344-ba1c-4205-9aa5-f6e7dea901ee/gettyimages-1397487342.jpg?auto=webp&precrop=6240,3504,x0,y530&width=1280" />
+                    <button onclick="signInOrUp()"> Register </button>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+
+        <!-- =================  code for image swiper  ============================= -->
+
+        <div class="swiper mySwiper" id="unhide">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img
+                        src="https://images.pexels.com/photos/13955179/pexels-photo-13955179.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" />
+                    <button onclick="signInOrUp()"> Register </button>
+                </div>
+                <div class="swiper-slide">
+                    <img
+                        src="https://images.pexels.com/photos/14655382/pexels-photo-14655382.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" />
+                    <button onclick="signInOrUp()"> Register </button>
+                </div>
+                <div class="swiper-slide">
+                    <img
+                        src="https://images.pexels.com/photos/14933181/pexels-photo-14933181.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" />
+                    <button onclick="signInOrUp()"> Register </button>
+                </div>
+                <div class="swiper-slide">
+                    <img
+                        src="https://images.pexels.com/photos/15045106/pexels-photo-15045106.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" />
+                    <button onclick="signInOrUp()"> Register </button>
+                </div>
+                <div class="swiper-slide">
+                    <img
+                        src="https://images.pexels.com/photos/14604771/pexels-photo-14604771.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" />
+                    <button onclick="signInOrUp()"> Register </button>
+                </div>
+                <div class="swiper-slide">
+                    <img
+                        src="https://images.pexels.com/photos/15146989/pexels-photo-15146989.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" />
+                    <button onclick="signInOrUp()"> Register </button>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+            <button class="closeSwiper" onclick="closeExplore()"> Back </button>
+        </div>
+
+
+        <!-- =================  code for image swiper ends here  ============================= -->
+    </div>
+
+    <!-- CDN For Swiper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <!-- CDN For Swiper.js -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 5,
+            spaceBetween: 70,
+            slidesPerGroup: 1,  // to specify kitna slides ek bar me move hoga 
+            centeredSlides: true,
+            grabCursor: true,
+
+
+            loop: true,
+            loopFillGroupWithBlank: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                color: "white",
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                // when window width is <= 499px
+                300: {
+                    slidesPerView: 1,
+                    centeredSlides: true,
+                    spaceBetweenSlides: 10
+                },
+                650: {
+                    slidesPerView: 3,
+                    centeredSlides: true,
+                },
+                // when window width is <= 999px
+                999: {
+                    slidesPerView: 5,
+                    centeredSlides: true,
+                    // spaceBetweenSlides: 50
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

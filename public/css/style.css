@@ -1,0 +1,759 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oxygen+Mono&family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.main-container {
+    width: 100%;
+    height: 100vh;
+    /* background: #1E1E1E; */
+    background: #131010;
+}
+
+header {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo__container {
+    width: 20%;
+    height: 80%;
+    padding: 15px;
+    border-radius: 0 30px 30px 0;
+    background: #1A1313;
+    box-shadow: 0px 4px 4px rgba(226, 226, 226, 0.1);
+}
+
+header .logo__container a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .logo__container a span {
+    color: #FFFFFF;
+    margin-left: 15px;
+    font-size: 1.2rem;
+}
+
+header nav {
+    width: 55%;
+    height: 80%;
+    border-radius: 30px 0px 0px 30px;
+    background: #1A1313;
+    box-shadow: 0px 4px 4px rgba(226, 226, 226, 0.1);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+header nav ul {
+    width: 85%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+header nav ul li a {
+    color: #FFFFFF;
+    font-size: 1.1rem;
+}
+
+header nav img {
+    width: 15%;
+    /* height: 0%; */
+}
+
+
+/* =================================================  container designing ================================== */
+.container {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    overflow: hidden;
+}
+
+.container .main {
+    width: 85%;
+    height: 100%;
+    /* height: 80%;
+    transform: scaleY(0.9); */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: height 0.3s;
+}
+
+.container .main .robo {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    /* border: 1px solid red; */
+}
+
+.container .main .robo .circle1 {
+    width: 350px;
+    transform: translateX(-50px);
+}
+
+.container .main .robo .robot {
+    width: 400px;
+    transform: translate(-250px, 20px);
+    transition: 0.3s;
+}
+
+
+.container .main .robo .signInOrUp {
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    color: #FFFFFF;
+    display: none;
+}
+
+.container .main .robo .signInOrUp .title {
+    width: fit-content;
+    font-size: 3.5rem;
+    border-bottom: 2px solid #FFFFFF;
+    margin-bottom: 10px;
+}
+
+.container .main .robo .signInOrUp .registration__form {
+    font-size: 2.1rem;
+}
+
+@media screen and (max-width : 1375px) {
+    .container .main .robo .signInOrUp .title {
+        font-size: 3rem;
+        padding-left: 0.4rem;
+    }
+
+    .container .main .robo .signInOrUp .arrowForm {
+        padding-left: 0.35rem;
+    }
+    
+    .container .main .robo .signInOrUp .registration__form {
+        font-size: 1.8rem;
+        padding-left: 0.35rem;
+    }
+}
+
+@media screen and (max-width : 1050px) {
+    .container .main .robo .signInOrUp .title {
+        font-size: 3rem;
+    }
+
+    .container .main .robo .signInOrUp .registration__form {
+        font-size: 2rem;
+    }
+}
+
+.container .main .robo .circle2 {
+    position: absolute;
+    width: 100px;
+    right: 50%;
+    bottom: 10px;
+    transition: 0.3s;
+}
+
+.container .main .robo .circle3 {
+    position: absolute;
+    width: 30px;
+    left: 15%;
+    top: 70px;
+}
+
+.container .main .content {
+    width: 50%;
+    padding-left: 1rem;
+    padding-right: 2rem;
+    height: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    position: relative;
+}
+
+.container .main .content .arrow1 {
+    width: 40%;
+    transform: translate(140px, 25px);
+}
+
+.container .main .content .title {
+    width: fit-content;
+    color: #FFFFFF;
+    font-size: 5.5rem;
+    font-family: 'Bebas Neue', cursive;
+    border-bottom: 2px solid #FFFFFF;
+    text-shadow: 2px 2px 3px #f7f754bb;
+    margin-bottom: 2rem
+}
+
+.container .main .content .brief {
+    color: #FFFFFF;
+    font-family: 'Oxygen Mono', monospace;
+    margin-bottom: 0.5rem;
+}
+
+
+.container .main .content .arrow2 {
+    width: 40%;
+    margin-bottom: 1rem;
+}
+
+.container .main .content button {
+    width: 30%;
+    padding: 1rem 0.65rem;
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    outline: none;
+    border: none;
+    background: linear-gradient(180deg, #8255D3 0%, #2C1518 100%);
+    border-radius: 30px;
+}
+
+
+.container .main .content button:hover {
+    box-shadow: 0px 3px 4px rgba(160, 160, 96, 0.614);
+}
+
+.container .sideone1,
+.container .sideone2,
+.container .circle4 {
+    position: absolute;
+}
+
+.container .sideone1 {
+    width: 350px;
+    top: 0;
+    right: -200px;
+}
+
+.container .sideone2 {
+    width: 300px;
+    right: -90px;
+    bottom: -90px;
+}
+
+.container .sideone2 {
+    width: 300px;
+    right: -90px;
+    bottom: -90px;
+}
+
+.container .circle4 {
+    width: 75px;
+    bottom: 150px;
+    right: 260px;
+}
+
+
+@media screen and (max-width : 1375px) {
+    .container .main .circle4 {
+        width: 60px;
+        bottom: 80px;
+    }
+
+    .container .main .robo .circle1 {
+        width: 350px;
+    }
+
+    .container .main .robo .circle2 {
+        position: absolute;
+        width: 50px;
+        right: 3%;
+        bottom: 0px;
+    }
+
+    .container .main .robo .circle3 {
+        width: 30px;
+        left: 10%;
+        top: 25px;
+    }
+
+    .container .main .robo .robot {
+        width: 375px;
+        transform: translate(-250px, 20px);
+    }
+
+    .container .main .content .arrow1 {
+        width: 35%;
+        transform: translate(150px, 25px);
+    }
+
+    .container .main .content .title {
+        font-size: 5rem;
+    }
+}
+
+@media screen and (max-width : 1150px) {
+    .container .main .robo .circle1 {
+        width: 300px;
+    }
+
+    .container .main .robo .robot {
+        width: 325px;
+        /* transform: translate(-250px, 20px); */
+    }
+
+    .container .main .robo .circle3 {
+        width: 45px;
+        left: 10%;
+        top: 30px;
+    }
+
+    .container .main .robo .circle2 {
+        width: 75px;
+        right: 3%;
+        bottom: 2%;
+    }
+
+    .container .main .content .arrow1 {
+        width: 35%;
+        transform: translate(170px, 25px);
+    }
+
+    .container .main .content button {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width : 950px) {
+    .main-container header .logo__container {
+        width: 30%;
+    }
+
+    .container .main .circle4 {
+        width: 45px;
+        bottom: 60px;
+    }
+
+    .container .main .content {
+        padding-left: 3rem;
+        padding-right: 0;
+    }
+
+    .container .main .robo .circle1 {
+        width: 290px;
+    }
+
+    .container .main .robo .robot {
+        width: 315px;
+    }
+
+    .container .main .content .arrow1 {
+        width: 35%;
+        transform: translate(190px, 25px);
+    }
+}
+
+@media screen and (max-width : 950px) {
+    .container .main .circle4 {
+        display: none;
+    }
+
+    .container .main .content .title {
+        font-size: 4rem;
+    }
+
+    .container .main .content .title {
+        font-size: 4rem;
+    }
+
+    .container .main .content .arrow1 {
+        transform: translate(125px, 15px);
+    }
+}
+
+
+/* ======================  swiper related code goes here ================== */
+
+.swiper {
+    height: 200px;
+    width: 90%;
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    display: none;
+}
+
+.swiper .closeSwiper {
+    position: absolute;
+    width: 100px;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    background-color: red;
+    z-index: 1000;
+    bottom: 10px;
+    right: 0;
+    color: #FFFFFF;
+    padding: 0.5rem;
+}
+
+.swiper-wrapper {
+    align-items: center;
+}
+
+.swiper-slide {
+    width: 150px;
+    height: 150px;
+    border-radius: 7px;
+    position: relative;
+
+
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* designing swiper buttons */
+.swiper-button-next,
+.swiper-button-prev {
+    color: whitesmoke;
+}
+
+/* designing swiper bullets at below  */
+.swiper-pagination-bullet {
+    background-color: red;
+    opacity: 1;
+}
+
+/* designing swiper bullets at below which is active  */
+.swiper-pagination-bullet-active {
+    /* background-color: #000; */
+    background-color: yellow;
+    opacity: 1;
+}
+
+.swiper-slide-active {
+    /*  if we do not provide centeredSlides : true, in script than we have to specify .swiper-slide-active + div 
+     type of things to select the centered element */
+    transform: scale(1.4,1.25);
+    transition: 1s ease;
+    z-index: 5;
+}
+
+.swiper-slide button {
+    width: 70%;
+    /* background: #131010; */
+    /* background: #327ca5; */
+    /* background: #522854; */
+    background: #54294e;
+    position: absolute;
+    left: 50%;
+    bottom: 15px;
+    transform: translate(-50%);
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    padding: 0.4rem;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: none;
+}
+
+.swiper-slide-active button {
+    display: block;
+}
+
+
+/* =======================  Designing registration form ===================== */
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Bebas Neue', cursive;
+} */
+
+@font-face {
+    font-family: spaceAge;
+    src: url(space\ age.ttf);
+}
+
+.mainRegistrationChange {
+    z-index: 100;
+}
+
+.form-container {
+    /* width: 60%; */
+    width: 100%;
+    /* height: 75%; */
+    height: 80%;
+    /* margin-left: 37%; */
+    background: linear-gradient(90.27deg, #050618 -0.39%, #570444 82.8%);
+    /* border: 1px solid #FFFFFF; */
+    border-radius: 25px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.login {
+    width: 50%;
+    height: 100%;
+    /* border: 1px solid black; */
+    padding: 2rem 0 1rem 2rem;
+}
+
+.registration {
+    width: 50%;
+    height: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    /* border: 1px solid red; */
+}
+
+.login h3,
+.registration h3 {
+    font-family: spaceAge;
+    color: rgba(255, 255, 255, 1);
+    font-size: 1.5rem;
+    letter-spacing: 0.25rem;
+    font-weight: lighter;
+    border-bottom: 1px solid rgba(255, 255, 255, 1);
+    margin-bottom: 1.5rem;
+}
+
+.login h3::first-letter,
+.registration h3::first-letter {
+    font-family: Bebas Neue;
+    font-size: 2.75rem;
+}
+
+.login form .input__fields label,
+.registration form .input__fields label {
+    color: rgba(255, 255, 255, 1);
+    letter-spacing: 0.1rem;
+    margin-left: 1rem;
+    font-family: spaceAge;
+}
+
+.login form .input__fields input,
+.registration form .input__fields input {
+    outline: none;
+    border: none;
+    width: 80%;
+    background: rgba(217, 217, 217, 0.5);
+    border-radius: 15px;
+    padding: 8px;
+    margin-bottom: 0.5rem;
+}
+
+.registration form .input__fields input {
+    margin-bottom: 0.25rem;
+}
+
+form input[type="submit"],
+.registration form .first__view .next__view,
+.registration form .second__view button,
+.swapper .register__message button,
+.swapper .login__message button, .swapper .verifyEmail, .ResendCode form button, .swapper .verification button {
+    outline: none;
+    border: none;
+    width: 55%;
+    margin-top: 1.5rem;
+    padding: 0.7rem 1.5rem;
+    background: linear-gradient(180deg, #7A4EC1 0%, #331A29 100%);
+    border-radius: 21.5px;
+    color: rgba(255, 255, 255, 1);
+    font-family: spaceAge;
+    font-size: 1.05rem;
+    cursor: pointer;
+}
+
+.registration form .first__view,
+.registration form .second__view {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.registration form .second__view .input__fields select {
+    outline: none;
+    border: none;
+    width: 70%;
+    background: rgba(217, 217, 217, 0.5);
+    border-radius: 15px;
+    padding: 8px;
+    margin-bottom: 0.5rem;
+}
+
+.registration form .second__view .prev__view {
+    width: 100%;
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: rgba(194, 127, 47, 1);
+}
+
+
+.swapper {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    right: -0.25%;
+    background-color: white;
+    border-radius: 25px;
+    transform: scaleY(1.1);
+    /* background-image: url(/images/virtual_reality_games.jpg); */
+    /* background-image: url(https://hdqwalls.com/wallpapers/virtual-reality-technology-5k-fl.jpg); */
+    /* background-image: url(https://www.sjpl.org/sites/default/files/styles/hero_image/public/2019-09/virtual-reality-1400.jpg?h=1dd3d00d&itok=YlY2OAn9); */
+    background-image: url(https://finergamer.com/wp-content/uploads/2020/09/Copy-of-stream-1-1-1024x1024-1.jpg);
+    /* background-image: url(https://wallpapercave.com/wp/wp3091493.jpg); */
+    /* background-image: url(/images/Non-immersive-Virtual-Reality.webp); */
+    background-repeat: no-repeat;
+    /* background-position: -150px; */
+    background-size: cover;
+    /* background: black; */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    /* transition: transform 0.5s, right 0.5s; */
+    transition: right 0.5s;
+}
+
+.swapper .verifyEmail{
+    margin-bottom: 3rem;
+}
+
+.resendCode form .input__fields label{
+    font-size: 0.75rem;
+}
+.swapper .verification{
+    margin: 5rem 1rem;
+    color: orangered;
+}
+.swapper .verification a{
+    color: #FFFFFF;
+}
+
+.swapper .verification a:hover{
+    color: orangered;
+}
+
+.swapper .register__message,
+.swapper .login__message {
+    width: 100%;
+    height: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.swapper .login__message {
+    height: 70%;
+    display: none;
+}
+
+.swapper .register__message h3,
+.swapper .login__message h3 {
+    font-family: 'Bebas Neue', cursive;
+    color: rgba(255, 255, 255, 1);
+    font-size: 30px;
+    letter-spacing: 0.25rem;
+}
+
+.swapper .register__message p,
+.swapper .login__message p {
+    color: rgba(255, 255, 255, 1);
+    font-family: 'Courier New', Courier, monospace;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.swapper .register__message h3::first-letter,
+.swapper .login__message h3::first-letter {
+    font-size: 37px;
+}
+
+/* ========================== errors designing ============================= */
+.login .loginError {
+    /* color: orangered; */
+    color: rgb(244, 67, 97);
+    padding-left: 1rem;
+    font-size: 1.1rem;
+    letter-spacing: 0.2rem;
+    margin-bottom: 1rem;
+}
+
+.login__message .registrationError {
+    padding-left: 1rem;
+    letter-spacing: 0.12rem;
+    margin-bottom: 0.75rem;
+}
+
+@media screen and (max-width : 1020px) {
+
+    .login form input[type="submit"],
+    .registration form .first__view .next__view,
+    .registration form .second__view button {
+        outline: none;
+        border: none;
+        width: 75.7%;
+    }
+
+    .login form .input__fields input,
+    .registration form .input__fields input,
+    .registration form .second__view .input__fields select {
+        width: 90%;
+        padding: 7px;
+    }
+
+    .login form .input__fields label,
+    .registration form .input__fields label {
+        font-size: 0.9rem;
+    }
+    .login__message .registrationError, .swapper .register__message p,
+    .swapper .login__message p {
+        font-size: 0.82rem;
+    }
+}
+
+@media screen and (max-width : 950px) {
+
+    .swapper .register__message h3,
+    .swapper .login__message h3 {
+        font-family: 'Bebas Neue', cursive;
+        color: rgba(255, 255, 255, 1);
+        font-size: 22.6px;
+        letter-spacing: 0.25rem;
+    }
+
+    .swapper .register__message h3::first-letter,
+    .swapper .login__message h3::first-letter {
+        font-size: 27px;
+    }
+}
